@@ -8,10 +8,10 @@ public class MTTK_Main {
   int menuOption = 0;
   boolean loggedIn = false;
 
-  printMenu();
   boolean loopAgain = true;
   while(loopAgain) {
       menuOption = 0;
+      printMenu();
       while(!(menuOption == 1 || menuOption == 2 || menuOption == 3)) {
       System.out.print("Select your option: ");
       menuOption = scanInt();

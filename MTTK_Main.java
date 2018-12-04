@@ -2,16 +2,20 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class MTTK_Main {
+  static String currentUser = "";
+
   private static Scanner scan = new Scanner(System.in);
   public static void main (String[] args) {
   
   int menuOption = 0;
   boolean loggedIn = false;
+  
 
-  printMenu();
   boolean loopAgain = true;
   while(loopAgain) {
       menuOption = 0;
+      currentUser = "";
+      printMenu();
       while(!(menuOption == 1 || menuOption == 2 || menuOption == 3)) {
       System.out.print("Select your option: ");
       menuOption = scanInt();
@@ -19,9 +23,7 @@ public class MTTK_Main {
     if (menuOption == 1) {
       tryCreateUser();
     } else if (menuOption == 2) {
-      tryLoginUser();
-      System.out.println("Welcome MAKE SURE RIGHT NAME!");
-      loggedIn = true;
+      loggedIn = tryLoginUser();
     } else if (menuOption == 3) {
       loopAgain = false;
     } else {
@@ -29,12 +31,13 @@ public class MTTK_Main {
     }
     if (loggedIn) {
       menuOption = 0;
+      System.out.println("Welcome " + currentUser + "!");
       printLoggedInMenu();
       while(menuOption != 1) {
         System.out.print("Select your option: ");
         menuOption = scanInt();
       }
-      System.out.println("Bye MAKE SURE RIGHT NAME!");
+      System.out.println("Bye " + currentUser + "!");
       loggedIn = false;
     }
   }
@@ -69,13 +72,17 @@ public class MTTK_Main {
     }
   }
 
-  private static void tryLoginUser() {
-    String tempUsername = "";
-    String tempPassword = "";
+  private static boolean tryLoginUser() {
+    MTTK_Login login = new MTTK_Login();
     System.out.print("Username: ");
-    tempUsername = scan.next();
+    String tempUsername = scan.next();
+    login.checkUsername(tempUsername);
     System.out.print("Password: ");
-    tempPassword = scan.next();
+    boolean success = login.checkPassword(scan.next());
+    if (success) {
+      currentUser = tempUsername;
+    }
+    return success;
   }
 
   private static void printMenu() {

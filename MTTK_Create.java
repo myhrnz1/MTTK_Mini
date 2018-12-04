@@ -1,14 +1,20 @@
 public class MTTK_Create {
-  private String tempUsername = "";
-  private String tempPassword = "";
+  private String tempUsername;
+  private String tempPassword;
 
-  private boolean usernameIsValid = false;
-  private boolean passwordIsValid = false;
+  private boolean usernameIsValid;
+  private boolean passwordIsValid;
+
+  public MTTK_Create() {
+    tempUsername = "";
+    tempPassword = "";
+    usernameIsValid = false;
+    passwordIsValid = false;
+  }
 
   public boolean tryUsername(String username) {
-    boolean usernameIsValid = false;
     int index = MTTK_Users.indexOfUser(username);
-    if (index > MTTK_Users.usersList.size()) {
+    if (index >= MTTK_Users.usersList.size()) {
       tempUsername = username;
       usernameIsValid = true;
     }
@@ -16,7 +22,6 @@ public class MTTK_Create {
   }
   
   public boolean tryPassword(String password) {
-    passwordIsValid = false;
     // here we can use requirements on chosen password
     tempPassword = password;
     passwordIsValid = true;

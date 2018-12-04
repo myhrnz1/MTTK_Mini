@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class MTTK_Users {
-  static ArrayList<MTTK_Users> usersList = new ArrayList<MTTK_Users>();
+  public static ArrayList<MTTK_Users> usersList = new ArrayList<MTTK_Users>();
 
   String username = "";
   String password = "";

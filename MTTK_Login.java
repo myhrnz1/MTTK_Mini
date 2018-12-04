@@ -18,8 +18,12 @@ public class MTTK_Login {
   }
 
   public boolean checkPassword(String password) {
+    System.out.println(usernameIsValid);
+    System.out.println(tempUsername);
+    System.out.println(password);
     if (usernameIsValid) {
-      return password == passwordOfUser(tempUsername);
+      System.out.println(MTTK_Users.passwordOfUser(tempUsername));
+      return password.equals(MTTK_Users.passwordOfUser(tempUsername));
     }
     return false;
   }

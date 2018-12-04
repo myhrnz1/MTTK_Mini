@@ -14,7 +14,6 @@ public class MTTK_Main {
   boolean loopAgain = true;
   while(loopAgain) {
       menuOption = 0;
-      currentUser = "";
       printMenu();
       while(!(menuOption == 1 || menuOption == 2 || menuOption == 3)) {
       System.out.print("Select your option: ");
@@ -24,6 +23,9 @@ public class MTTK_Main {
       tryCreateUser();
     } else if (menuOption == 2) {
       loggedIn = tryLoginUser();
+      if (!loggedIn) {
+        System.out.println("Wrong username and/or password!");
+      }
     } else if (menuOption == 3) {
       loopAgain = false;
     } else {
@@ -38,6 +40,7 @@ public class MTTK_Main {
         menuOption = scanInt();
       }
       System.out.println("Bye " + currentUser + "!");
+      currentUser = "";
       loggedIn = false;
     }
   }

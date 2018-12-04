@@ -15,7 +15,7 @@ public class MTTK_Create {
   public boolean tryUsername(String username) {
     int index = MTTK_Users.indexOfUser(username);
     System.out.println("index: " + index);
-    if (MTTK_Users.usersList.size() == 0 || index > MTTK_Users.usersList.size()) {
+    if (index >= MTTK_Users.usersList.size()) {
       tempUsername = username;
       usernameIsValid = true;
     }

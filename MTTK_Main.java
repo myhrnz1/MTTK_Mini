@@ -42,12 +42,27 @@ public class MTTK_Main {
   }
 
   private static void tryCreateUser() {
-    String tempUsername = "";
-    String tempPassword = "";
-    System.out.print("Choose a username: ");
-    tempUsername = scan.next();
-    System.out.print("Choose a password: ");
-    tempPassword = scan.next();
+    boolean success = false;
+    MTTK_Create create = new MTTK_Create();
+    while(!success) {
+      boolean validInput = false;
+      System.out.print("Choose a username: ");
+      while(!validInput) {
+        validInput = create.tryUsername(scan.next());
+        if(!validInput) {
+          System.out.print("Choose another username: ");
+        }
+      }
+      validInput = false;
+      while(!validInput) {
+        System.out.print("Choose a password: ");
+        validInput = create.tryPassword(scan.next());
+        if(!validInput) {
+          System.out.print("Choose another password: ");
+        }
+      }
+      success = create.tryCreate();
+    }
   }
 
   private static void tryLoginUser() {

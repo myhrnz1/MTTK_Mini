@@ -6,10 +6,10 @@ public class MTTK_Create {
   private boolean passwordIsValid;
 
   public MTTK_Create() {
-    tempUsername = "";
-    tempPassword = "";
-    usernameIsValid = false;
-    passwordIsValid = false;
+    public tempUsername = "";
+    public tempPassword = "";
+    public usernameIsValid = false;
+    public passwordIsValid = false;
   }
 
   public boolean tryUsername(String username) {
@@ -20,7 +20,7 @@ public class MTTK_Create {
     }
     return usernameIsValid;
   }
-  
+
   public boolean tryPassword(String password) {
     // here we can use requirements on chosen password
     tempPassword = password;

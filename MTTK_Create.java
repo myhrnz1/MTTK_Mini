@@ -1,15 +1,15 @@
 public class MTTK_Create {
-  private String tempUsername;
-  private String tempPassword;
+  public String tempUsername;
+  public String tempPassword;
 
-  private boolean usernameIsValid;
-  private boolean passwordIsValid;
+  public boolean usernameIsValid;
+  public boolean passwordIsValid;
 
   public MTTK_Create() {
-    public tempUsername = "";
-    public tempPassword = "";
-    public usernameIsValid = false;
-    public passwordIsValid = false;
+    tempUsername = "";
+    tempPassword = "";
+    usernameIsValid = false;
+    passwordIsValid = false;
   }
 
   public boolean tryUsername(String username) {

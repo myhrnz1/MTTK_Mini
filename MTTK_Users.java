@@ -16,6 +16,10 @@ public class MTTK_Users {
     usersList.add(newUser);
   }
 
+  public static void setStateEmptyUsersList() {
+    usersList.clear();
+  }
+
   public static int indexOfUser(String username) {
     int index;
     for (index = 0; index < usersList.size(); index++) {

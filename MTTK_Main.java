@@ -2,14 +2,14 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class MTTK_Main {
-  static String currentUser = "";
+  public static String currentUser = "";
 
-  private static Scanner scan = new Scanner(System.in);
+  public static Scanner scan = new Scanner(System.in);
   public static void main (String[] args) {
-  
+
   int menuOption = 0;
   boolean loggedIn = false;
-  
+
 
   boolean loopAgain = true;
   while(loopAgain) {

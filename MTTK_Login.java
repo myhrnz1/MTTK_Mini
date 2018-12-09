@@ -1,7 +1,7 @@
 public class MTTK_Login {
 
-  private String tempUsername;
-  private boolean usernameIsValid;
+  public String tempUsername;
+  public boolean usernameIsValid;
 
   public MTTK_Login() {
     tempUsername = "";
